@@ -1,0 +1,41 @@
+#table1
+  {
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  width:100%;
+  border-collapse:collapse;
+  margin:auto;
+  }
+
+#table1 td,th 
+  {
+  border:1px solid #98bf21;
+  padding:3px 7px 2px 7px;
+  }
+
+#table1 td {
+  font-size: 14px;
+}
+#table1 th 
+  {
+  font-size:1.1em;
+  text-align:left;
+  padding-top:5px;
+  padding-bottom:4px;
+  background-color:#A7C942;
+  color:#ffffff;
+  }
+
+#table1 tr.nonWorkDay 
+  {
+  font-size:5em;
+  color:#000000;
+  background-color:#EAF2D3;
+  }
+
+#reason {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-color: #000000;  
+  width: 100%;
+}

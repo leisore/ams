@@ -1,0 +1,97 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 5;
+  width: 30.3333333333%;
+  height: 132px;
+  margin: 8px 0 0 33.75%;
+  border: 1px dotted rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.container .text {
+  position: relative;
+  width: 14.5685693424%;
+  margin-left: 13.13323%;
+  color: rgb(0, 0, 0);
+}
+
+.text {
+  float: left;
+  font-size: 1em;
+}
+
+._button {
+  display: block;
+  float: left;
+  width: 6.8%;
+  height: 24px;
+  margin: 23px 0 0 54.24349%;
+  border-radius: 3px;
+  background-color: rgb(222, 222, 222);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+._input {
+  display: block;
+  position: relative;
+  float: left;
+  width: 57.9993987029%;
+  margin-left: 4.11574%;
+  padding: 0 10px;
+  background-color: rgb(242, 242, 242);
+  font-size: 0.813em;
+  color: rgb(0, 0, 0);
+}
+
+.text-1 {
+  width: 23.25%;
+  min-height: 32px;
+  margin: 182px 0 0 37.32813%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.text-2 {
+  z-index: 1;
+  min-height: 31px;
+  margin-top: 16px;
+}
+
+.text-3 {
+  clear: both;
+  z-index: 2;
+  min-height: 30px;
+  margin-top: 17px;
+}
+
+.text-4 {
+  position: relative;
+  clear: both;
+  z-index: 7;
+  width: 17.4166666666%;
+  min-height: 19px;
+  margin: -27px 0 0 43.5833333333%;
+  color: rgb(253, 1, 1);
+}
+
+.container ._input-1 {
+  z-index: 3;
+  height: 31px;
+  margin-top: 16px;
+}
+
+.container ._input-2 {
+  z-index: 4;
+  height: 30px;
+  margin-top: 17px;
+}

@@ -106,6 +106,17 @@ function json2map(json) {
     return new Map(JSON.parse(json));
 }
 
+function md5(s) {
+    var crypto = require('crypto');
+    return crypto.createHash('md5').update(s).digest("hex");
+}
+
+function uid() {
+    crypto = require("crypto");
+    uid = crypto.randomBytes(16).toString("hex");
+    return uid;
+}
+
 exports.employees = employees;
 exports.cnName2SpellName = cnName2SpellName;
 exports.spellName2CnName = spellName2CnName;
@@ -118,4 +129,6 @@ exports.isHoliWorkday = isHoliWorkday;
 exports.isWorkDay = isWorkDay; 
 exports.getWeekdayLabel = getWeekdayLabel;
 exports.getOvertimeStart = getOvertimeStart;
+exports.md5 = md5;
+exports.uid = uid;
  

@@ -114,7 +114,7 @@ function parse(path) {
     }
 
     logger.info("Shuffle done.");
-    logger.debug(util.inspect(workSheet));
+    //logger.debug(util.inspect(workSheet));
     return workSheet;
 }
 

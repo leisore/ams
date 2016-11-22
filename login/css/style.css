@@ -11,15 +11,14 @@
   {
   border:1px dotted #000000;
   padding:3px 7px 2px 7px;
-  width: 15%;
   }
 
 #table1 td {
-  font-size: 12px;
+  font-size: 14px;
 }
 #table1 th 
   {
-  font-size:12px;
+  font-size:1.1em;
   text-align:left;
   padding-top:5px;
   padding-bottom:4px;
@@ -28,7 +27,7 @@
 
 #table1 tr.nonWorkDay 
   {
-  font-size:12px;
+  font-size:5em;
   color:#000000;
   background-color:#EAF2D3;
   }
@@ -69,8 +68,3 @@ a#currentCommit2 {
   text-decoration: underline;
 }
 a#currentCommit2:hover   {color:blue; font-size:100%;}
-
-input#newPassword {
-  background-color: rgb(242, 242, 242);
-  color: rgb(0, 0, 0);
-}

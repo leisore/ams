@@ -1,5 +1,6 @@
 /.vscode
 /backup
+/config/users.json
 /config/Employee.json
 /config/LegalHoliday.json
 /upload

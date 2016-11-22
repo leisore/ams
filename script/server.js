@@ -8,6 +8,7 @@ function start(route, handler) {
 		var pathname = url.parse(request.url).pathname;
 		logger.info("request for "  + pathname + " received.");
 
+		//request.setEncoding("utf8");
 		route(handler, pathname, request, response);	
 	};
 

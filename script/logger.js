@@ -15,7 +15,6 @@ function debug(msg) {
 	console.info(now() + " DEBUG " + msg);
 }
 
-
 exports.info = info;
 exports.err = err;
 exports.debug = debug;

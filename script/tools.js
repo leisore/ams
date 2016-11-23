@@ -61,11 +61,11 @@ function isWeekend(ymd) {
 }
 
 function isHoliday(ymd) {
-    return LegalHoliday[ymd.substring(0,7)]["Holiday"].includes(ymd);
+    return LegalHoliday[ymd.substring(0,7)] && LegalHoliday[ymd.substring(0,7)]["Holiday"].includes(ymd);
 }
 
 function isHoliWorkday(ymd) {
-    return LegalHoliday[ymd.substring(0,7)]["WorkDay"].includes(ymd);
+    return LegalHoliday[ymd.substring(0,7)] && LegalHoliday[ymd.substring(0,7)]["WorkDay"].includes(ymd);
 }
 
 function isWorkDay(ymd) {

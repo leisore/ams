@@ -72,6 +72,7 @@ function employeeHistory() {
     ajaxCall("/employee/history;uid=" + uid(), "get", function(current) {
         var mainFrame = document.getElementById("mainFrame");
         mainFrame.innerHTML = current;
+        /*
         mainFrame.childNodes.forEach(v => {
             v.childNodes.forEach(v2 => {
                 v2.onclick = function() {
@@ -82,6 +83,19 @@ function employeeHistory() {
                 }
             });
         });
+        */
+        for (var i = 0 ; i < mainFrame.childNodes.length; i++) {
+            var child = mainFrame.childNodes[i];
+            for (var j = 0 ; j < child.childNodes.length; j++) {
+                var lk = child.childNodes[j];
+                lk.onclick = function() {
+                    var ym = this.innerText;
+                    ajaxCall("/employee/historyDetails;uid=" + uid() + '?date=' + ym, "get", function(current) {
+                        document.getElementById("mainFrame").innerHTML = current;
+                    });               
+                }
+            }
+        }
     });
     return false;
 }
@@ -118,6 +132,7 @@ function managerReport() {
     ajaxCall("/manager/history;uid=" + uid(), "get", function(current) {
         var mainFrame = document.getElementById("mainFrame");
         mainFrame.innerHTML = current;
+        /* ie cant support foreach
         mainFrame.childNodes.forEach(v => {
             v.childNodes.forEach(v2 => {
                 v2.onclick = function() {
@@ -127,6 +142,18 @@ function managerReport() {
                 }
             });
         });
+        */
+        for (var i = 0 ; i < mainFrame.childNodes.length; i++) {
+            var child = mainFrame.childNodes[i];
+            for (var j = 0 ; j < child.childNodes.length; j++) {
+                var lk = child.childNodes[j];
+                lk.onclick = function() {
+                    var ym = this.innerText;
+                    window.open("/manager/report;uid=" + uid() + '?date=' + ym, ym);
+                    return false;                
+                }
+            }
+        }
     });
     return false;    
 }

@@ -12,7 +12,11 @@ function uid(s) {
 	var uidKV = s.substring(s.lastIndexOf(';') + 1);
 	var key = uidKV.split('=')[0];
 	var uid = uidKV.split('=')[1];
-	return uid;
+
+	if (users.userManager.getUsernameByUid(uid)) {
+		return uid;
+	}
+	return null;
 }
 
 function route(handler, pathname, request, response) {
@@ -40,12 +44,13 @@ function route(handler, pathname, request, response) {
 		pathname = "/index";
 	} else if (pathname == "/home"){
 	} else if (!uid(pathname)) {
+		logger.err("access deny:" + request.socket.remoteAddress);
 		response.writeHead(307, {"Location":"/"});
 		response.end();
 		return;		
 	}	
 
-	logger.info("route a request for " + pathname + ", audit[" + request.socket.remoteAddress + ": " + pathname + "]");
+	logger.info("route a request for " + pathname + ", audit[" + request.socket.remoteAddress + "]");
 
 	var id=  uid(pathname);
 	request.uid =  id;

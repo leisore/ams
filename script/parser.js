@@ -7,8 +7,9 @@ var logger = require('./logger.js');
 var tools = require('./tools.js');
 
 function parse(path) {
-    //var buf = iconv.encode(iconv.decode(fs.readFileSync("./201610.txt"), "gbk"), "utf-8");
+    //var buf = iconv.encode(iconv.decode(fs.readFileSync(path), "gbk"), "utf-8");
     var buf = (fs.readFileSync(path));
+    logger.debug("===" + buf.length);
 
     var metNonSpace, metLF, metCR, firstLine = true;
     var start = 0, len = 0,  size = buf.length;
@@ -91,6 +92,7 @@ function parse(path) {
         table.push(user);
         len =  len + lineLen + offset;
     }
+    
     logger.info("Parse done.");
 
     var workSheet = new Map();    

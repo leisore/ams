@@ -26,7 +26,7 @@ function employees() {
 }
 
 function getCnWeekDay(ymd) {
-    var date = new Date(ymd.split("/")[0], ymd.split("/")[1]-1, ymd.split("/")[2]);
+    var date = new Date(ymd.split("-")[0], ymd.split("-")[1]-1, ymd.split("-")[2]);
     switch (date.getDay()) {
         case 0:
             return '星期日';
@@ -56,7 +56,7 @@ function getCnWeekDay(ymd) {
 }
 
 function isWeekend(ymd) {
-    var date = new Date(ymd.split("/")[0], ymd.split("/")[1]-1, ymd.split("/")[2]);
+    var date = new Date(ymd.split("-")[0], ymd.split("-")[1]-1, ymd.split("-")[2]);
     return date.getDay() ==0 || date.getDay() ==6; 
 }
 

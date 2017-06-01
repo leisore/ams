@@ -72,7 +72,7 @@ var managerAction = {
 		
 		for (var [k,v] of workSheet) {
 			var items = v;
-			for (var i = 0; i < items.length; i++) {
+			for (var i = 0; items && (i < items.length); i++) {
 				if (items[i].workType == 1) {
 					var row = '\
 						<tr ' + (!tools.isWorkDay(items[i].date) ? 'class="nonWorkDay"' : "") + '> \
@@ -105,7 +105,7 @@ var managerAction = {
 
 		for (var [k,v] of workSheet) {
 			var items = v;				
-			for (var i = 0; i < items.length; i++) {
+			for (var i = 0; items && (i < items.length); i++) {
 				if (items[i].workType == 2) {
 					var row = '\
 						<tr ' + (!tools.isWorkDay(items[i].date) ? 'class="nonWorkDay"' : "") + '> \
@@ -171,6 +171,7 @@ var employeeAction = {
 		var year = date.getFullYear();
 		var current = date.getMonth() + 1;	
 		var last = current - 1;
+		//var last = current;
 
 		if (current < 10) current = "0" + current;
 		if (last < 10) last = "0" + last;
@@ -193,7 +194,7 @@ var employeeAction = {
 							<th>加班事由</th> \
 						</tr>';			
 			
-			for (var i = 0; i < items.length; i++) {
+			for (var i = 0; items && (i < items.length); i++) {
 				var row = '\
 						<tr ' + (!tools.isWorkDay(items[i].date) ? 'class="nonWorkDay"' : "") + '> \
 							<td>' + items[i].date + '</td> \
@@ -241,7 +242,7 @@ var employeeAction = {
 						<th>是否领取饭补</th> \
 					</tr>';		
 		
-		for (var i = 0; i < items.length; i++) {
+		for (var i = 0; items && (i < items.length); i++) {
 			if (items[i].workType == 1) {
 				content += '\
 					<tr ' + (!tools.isWorkDay(items[i].date) ? 'class="nonWorkDay"' : "") + '> \
@@ -264,7 +265,7 @@ var employeeAction = {
 						<th>加班事由</th> \
 					</tr>';
 					
-		for (var i = 0; i < items.length; i++) {
+		for (var i = 0; items && (i < items.length); i++) {
 			if (items[i].workType == 2) {
 				content += '\
 					<tr ' + (!tools.isWorkDay(items[i].date) ? 'class="nonWorkDay"' : "") + '> \
@@ -291,7 +292,7 @@ var employeeAction = {
 		var workSheet = tools.json2map(fs.readFileSync(path));			
 		var items = workSheet.get(tools.spellName2CnName(name));
 
-		for (var i = 0; i < items.length; i++) {
+		for (var i = 0; items && (i < items.length); i++) {
 			items[i].workType = query["d" + i];
 			items[i].workReason = query["r" + i]
 		}
